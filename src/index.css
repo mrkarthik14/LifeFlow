@@ -1,0 +1,142 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Roboto Flex", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Playfair Display", ui-serif, Georgia, serif;
+
+  --color-primary-50: var(--color-primary-50);
+  --color-primary-100: var(--color-primary-100);
+  --color-primary-200: var(--color-primary-200);
+  --color-primary-300: var(--color-primary-300);
+  --color-primary-400: var(--color-primary-400);
+  --color-primary-500: var(--color-primary-500);
+  --color-primary-600: var(--color-primary-600);
+  --color-primary-700: var(--color-primary-700);
+  --color-primary-800: var(--color-primary-800);
+  --color-primary-900: var(--color-primary-900);
+}
+
+@layer base {
+  :root {
+    --background: #fafafa;
+    --surface: #ffffff;
+    --surface-variant: #f4f4f5;
+    --on-background: #27272a;
+    --on-surface: #18181b;
+    --on-surface-variant: #71717a;
+    --border: #f4f4f5;
+    --border-dark: #e4e4e7;
+    
+    /* Soft Pastel Default (Light Indigo/Lavender structure) */
+    --color-primary-50: #f5f3ff;
+    --color-primary-100: #ede9fe;
+    --color-primary-200: #ddd6fe;
+    --color-primary-300: #c4b5fd;
+    --color-primary-400: #a78bfa;
+    --color-primary-500: #8b5cf6;
+    --color-primary-600: #7c3aed;
+    --color-primary-700: #6d28d9;
+    --color-primary-800: #5b21b6;
+    --color-primary-900: #4c1d95;
+  }
+
+  body {
+    background-color: var(--background);
+    color: var(--on-background);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    transition: background-color 0.8s ease, color 0.5s ease;
+  }
+
+  :root.dark {
+    --background: #0f172a;
+    --surface: #1e293b;
+    --surface-variant: #334155;
+    --on-background: #f8fafc;
+    --on-surface: #f1f5f9;
+    --on-surface-variant: #94a3b8;
+    --border: #334155;
+    --border-dark: #475569;
+  }
+
+  /* Real Pastel Palettes */
+  :root[data-mood="productive"] {
+    --color-primary-50: #fdf4ff;
+    --color-primary-100: #fae8ff;
+    --color-primary-500: #d946ef;
+    --color-primary-600: #c026d3;
+    --background: #fdfafb;
+  }
+
+  :root[data-mood="focused"] {
+    --color-primary-50: #f0f9ff;
+    --color-primary-100: #e0f2fe;
+    --color-primary-500: #0ea5e9;
+    --color-primary-600: #0284c7;
+    --background: #f4fafe;
+  }
+  
+  :root[data-mood="calm"] {
+    --color-primary-50: #f0fdf4;
+    --color-primary-100: #dcfce7;
+    --color-primary-500: #22c55e;
+    --color-primary-600: #16a34a;
+    --background: #f7fdf9;
+  }
+  
+  :root[data-mood="energetic"] {
+    --color-primary-50: #fffbeb;
+    --color-primary-100: #fef3c7;
+    --color-primary-500: #f59e0b;
+    --color-primary-600: #d97706;
+    --background: #fffdf5;
+  }
+  
+  :root[data-mood="relaxed"] {
+    --color-primary-50: #f5f3ff;
+    --color-primary-100: #ede9fe;
+    --color-primary-500: #8b5cf6;
+    --color-primary-600: #7c3aed;
+    --background: #faf9ff;
+  }
+  
+  :root[data-mood="stressed"] {
+    --color-primary-50: #f1f5f9;
+    --color-primary-100: #e2e8f0;
+    --color-primary-500: #64748b;
+    --color-primary-600: #475569;
+    --background: #f8fafc;
+  }
+
+  /* Weather based themes */
+  :root[data-mood="sunny"] {
+    --color-primary-50: #fff7ed;
+    --color-primary-100: #ffedd5;
+    --color-primary-500: #f97316;
+    --color-primary-600: #ea580c;
+    --background: #fffbf5;
+  }
+  :root[data-mood="rainy"] {
+    --color-primary-50: #eff6ff;
+    --color-primary-100: #dbeafe;
+    --color-primary-500: #3b82f6;
+    --color-primary-600: #2563eb;
+    --background: #f3f8fd;
+  }
+  :root[data-mood="cloudy"] {
+    --color-primary-50: #fdfdfd;
+    --color-primary-100: #f4f4f5;
+    --color-primary-500: #71717a;
+    --color-primary-600: #52525b;
+    --background: #fafafa;
+  }
+  :root[data-mood="clear"] {
+    --color-primary-50: #f5f3ff;
+    --color-primary-100: #ede9fe;
+    --color-primary-500: #8b5cf6;
+    --color-primary-600: #7c3aed;
+    --background: #faf8ff;
+  }
+}
+
